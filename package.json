@@ -1,0 +1,16 @@
+{
+  "name": "glslang-validator-prebuilt",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./build.sh",
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "fand <fand.gmork@gmail.com> (https://gmork.in/)",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
+}
