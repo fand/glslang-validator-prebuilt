@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "./build.sh",
+    "build": "node build.js",
+    "postinstall": "node build.js",
     "test": "node test.js"
   },
   "keywords": [],
@@ -12,5 +13,11 @@
   "license": "MIT",
   "devDependencies": {
     "tape": "^4.11.0"
+  },
+  "dependencies": {
+    "download": "^7.1.0",
+    "extract-zip": "^1.6.7",
+    "pify": "^4.0.1",
+    "temp-dir": "^2.0.0"
   }
 }
