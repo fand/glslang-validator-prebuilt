@@ -16,7 +16,6 @@ if (arch !== "x64") {
 var glslangValidatorPath = path.join(
   __dirname,
   "bin",
-  platform,
   platform === "win32" ? "glslangValidator.exe" : "glslangValidator"
 );
 
