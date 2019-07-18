@@ -14,6 +14,7 @@
   "devDependencies": {
     "tape": "^4.11.0"
   },
+  "types": "index.d.ts",
   "dependencies": {
     "download": "^7.1.0",
     "extract-zip": "^1.6.7",
