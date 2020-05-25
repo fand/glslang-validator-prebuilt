@@ -13,13 +13,13 @@
   "license": "MIT",
   "devDependencies": {
     "rimraf": "^3.0.2",
-    "tape": "^4.11.0"
+    "tape": "^5.0.1"
   },
   "types": "index.d.ts",
   "dependencies": {
-    "download": "^7.1.0",
-    "extract-zip": "^1.6.7",
-    "pify": "^4.0.1",
+    "download": "^8.0.0",
+    "extract-zip": "^2.0.0",
+    "pify": "^5.0.0",
     "temp-dir": "^2.0.0"
   }
 }
