@@ -12,6 +12,7 @@
   "author": "fand <fand.gmork@gmail.com> (https://gmork.in/)",
   "license": "MIT",
   "devDependencies": {
+    "rimraf": "^3.0.2",
     "tape": "^4.11.0"
   },
   "types": "index.d.ts",

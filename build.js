@@ -4,6 +4,7 @@ const path = require("path");
 const download = require("download");
 const tempDirRoot = require("temp-dir");
 const extract = require("extract-zip");
+const rimraf = require("rimraf");
 const p = require("pify");
 
 // Utility functions
@@ -42,6 +43,7 @@ const dstBinDir = path.resolve(__dirname, `bin`);
 
 download(url, tempDir)
   .then(() => p(extract)(zipPath, { dir: tempDir }))
+  .then(() => p(rimraf)(dstBinDir))
   .then(() => p(fs.mkdir)(dstBinDir, { recursive: true }))
   .then(() => p(fs.copyFile)(unzippedBinPath, dstBinPath))
   .then(() => p(fs.chmod)(dstBinPath, "755"))
