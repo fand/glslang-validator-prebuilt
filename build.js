@@ -3,8 +3,9 @@ const os = require("os");
 const path = require("path");
 const download = require("download");
 const tempDirRoot = require("temp-dir");
-const extract = require("extract-zip");
+const extract = require("decompress");
 const rimraf = require("rimraf");
+const mkdirp = require('mkdirp');
 const p = require("pify");
 
 // Utility functions
@@ -41,17 +42,23 @@ const unzippedBinPath = path.resolve(tempDir, `bin/glslangValidator${suffix}`);
 const dstBinPath = path.resolve(__dirname, `bin/glslangValidator${suffix}`);
 const dstBinDir = path.resolve(__dirname, `bin`);
 
+const run = (promise, msg) => promise.catch(e => {
+  console.error(e);
+  throw new Error(msg);
+});
+
 p(rimraf)(tempDir)
-  .then(() => download(url, tempDir))
-  .then(() => extract(zipPath, { dir: tempDir }))
-  .then(() => p(rimraf)(dstBinDir))
-  .then(() => p(fs.mkdir)(dstBinDir, { recursive: true }))
-  .then(() => p(fs.copyFile)(unzippedBinPath, dstBinPath))
-  .then(() => p(fs.chmod)(dstBinPath, "755"))
+  .then(() => run(mkdirp(tempDir), `Failed to create temporal directory: '${tempDir}'`))
+  .then(() => run(download(url, tempDir), `Failed to download the binary to: ${tempDir}`))
+  .then(() => run(extract(zipPath, tempDir), `Failed to extract zip file: '${zipPath}'`))
+  .then(() => run(p(rimraf)(dstBinDir), `Failed to clean up bin directory: '${dstBinDir}'`))
+  .then(() => run(mkdirp(dstBinDir), `Failed to create temporal directory: '${dstBinDir}'`))
+  .then(() => run(p(fs.copyFile)(unzippedBinPath, dstBinPath), `Failed to copy binary to: '${dstBinPath}'`))
+  .then(() => run(p(fs.chmod)(dstBinPath, "755"), `Failed to chmod binary: '${dstBinPath}'`))
   .then(() => {
     log("Installed glslangValidator successfully!");
   })
   .catch(e => {
     console.error(e);
-    err("Failed to download the binary.");
+    err("Failed to install glslang-validator.");
   });

@@ -17,8 +17,9 @@
   },
   "types": "index.d.ts",
   "dependencies": {
+    "decompress": "^4.2.1",
     "download": "^8.0.0",
-    "extract-zip": "^2.0.0",
+    "mkdirp": "^1.0.4",
     "pify": "^5.0.0",
     "temp-dir": "^2.0.0"
   }
