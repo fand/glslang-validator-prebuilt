@@ -41,7 +41,8 @@ const unzippedBinPath = path.resolve(tempDir, `bin/glslangValidator${suffix}`);
 const dstBinPath = path.resolve(__dirname, `bin/glslangValidator${suffix}`);
 const dstBinDir = path.resolve(__dirname, `bin`);
 
-download(url, tempDir)
+p(rimraf)(tempDir)
+  .then(() => download(url, tempDir))
   .then(() => extract(zipPath, { dir: tempDir }))
   .then(() => p(rimraf)(dstBinDir))
   .then(() => p(fs.mkdir)(dstBinDir, { recursive: true }))
