@@ -20,5 +20,5 @@ var glslangValidatorPath = path.join(
 );
 
 module.exports = {
-  path: glslangValidatorPath
+  path: glslangValidatorPath,
 };
