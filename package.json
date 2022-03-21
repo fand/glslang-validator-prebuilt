@@ -15,7 +15,7 @@
   "devDependencies": {
     "prettier": "^2.6.0",
     "rimraf": "^3.0.2",
-    "tape": "^5.0.1"
+    "tape": "^5.5.2"
   },
   "types": "index.d.ts",
   "dependencies": {
