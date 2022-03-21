@@ -3,12 +3,13 @@ on: push
 
 jobs:
   build:
-    runs-on:
-      - ubuntu-latest
-      - windows-latest
-      - macos-latest
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
     steps:
       - uses: actions/checkout@v2
       - run: npm ci
       - run: npm test
-
