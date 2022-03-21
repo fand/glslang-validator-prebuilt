@@ -9,8 +9,7 @@ All binaries are downloaded from https://github.com/KhronosGroup/glslang/release
 When releasing new versions, **we do *not* consider breaking changes in `glslang` itself**, but only the JS interface.
 To stop `glslang-validator-prebuilt` from breaking your code by getting updated, [lock the version down](https://docs.npmjs.com/files/package.json#dependencies) or use a [lockfile](https://docs.npmjs.com/files/package-lock.json).
 
-[![TravisCI build status](https://travis-ci.org/fand/glslang-validator-prebuilt.svg?branch=master)](http://travis-ci.org/fand/glslang-validator-prebuilt)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/u7bdh694m17hbxrc/branch/master?svg=true)](https://ci.appveyor.com/project/fand/glslang-validator-prebuilt)
+![CI status](https://github.com/fand/glslang-validator-prebuilt/actions/workflows/ci.yml/badge.svg)
 
 
 ## Install
