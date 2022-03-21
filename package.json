@@ -10,7 +10,7 @@
     "format": "prettier --write ./*.js"
   },
   "keywords": [],
-  "author": "fand <fand.gmork@gmail.com> (https://gmork.in/)",
+  "author": "AMAGI <mail@amagi.dev> (https://amagi.dev/)",
   "license": "MIT",
   "devDependencies": {
     "prettier": "^2.6.0",
