@@ -23,7 +23,7 @@ const arch = os.arch();
 if (platform !== "linux" && platform !== "darwin" && platform !== "win32") {
   err(`Unsupported platform: ${platform}`);
 }
-if (arch !== "x64") {
+if (!(arch === "x64" || (arch === "arm64" && platform === "darwin"))) {
   err(`Unsupported architecture: ${arch}`);
 }
 
