@@ -30,12 +30,12 @@ if (!(arch === "x64" || (arch === "arm64" && platform === "darwin"))) {
 const filenames = {
   darwin: "glslang-master-osx-Release",
   linux: "glslang-master-linux-Release",
-  win32: "glslang-master-windows-x64-Release",
+  win32: "glslang-master-windows-Release",
 };
 
 const filename = filenames[platform];
 const suffix = platform === "win32" ? ".exe" : "";
-const url = `https://github.com/KhronosGroup/glslang/releases/download/master-tot/${filename}.zip`;
+const url = `https://github.com/KhronosGroup/glslang/releases/download/main-tot/${filename}.zip`;
 const tempDir = path.resolve(tempDirRoot, "glslang-validator-prebuilt");
 const zipPath = path.resolve(tempDir, `${filename}.zip`);
 const unzippedBinPath = path.resolve(tempDir, `bin/glslangValidator${suffix}`);
