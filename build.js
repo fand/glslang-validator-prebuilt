@@ -30,7 +30,7 @@ if (!(arch === "x64" || (arch === "arm64" && platform === "darwin"))) {
 const filenames = {
   darwin: "glslang-master-osx-Release",
   linux: "glslang-master-linux-Release",
-  win32: "glslang-master-windows-x64-Release",
+  win32: "glslang-master-windows-Release",
 };
 
 const filename = filenames[platform];
