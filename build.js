@@ -35,7 +35,7 @@ const filenames = {
 
 const filename = filenames[platform];
 const suffix = platform === "win32" ? ".exe" : "";
-const url = `https://github.com/KhronosGroup/glslang/releases/download/master-tot/${filename}.zip`;
+const url = `https://github.com/KhronosGroup/glslang/releases/download/main-tot/${filename}.zip`;
 const tempDir = path.resolve(tempDirRoot, "glslang-validator-prebuilt");
 const zipPath = path.resolve(tempDir, `${filename}.zip`);
 const unzippedBinPath = path.resolve(tempDir, `bin/glslangValidator${suffix}`);
